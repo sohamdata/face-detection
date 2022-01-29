@@ -1,23 +1,113 @@
-
-.container button{
-    position: absolute;
-    padding: 0%;
-    width: 100px;
-    font-size: 20px;
-    z-index: 1;
-    color: black;
-    cursor:crosshair;
-  }
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Ubuntu Mono', monospace;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #C0D8C0;
   }
 
-canvas {
+  h1{
+    font-size: 32pt;
+    color: #B8405E;
+  }
+  
+  menu {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .menu-item{
+    box-shadow: 0px 0px 17px -1px #B8405E;
+    background-color: #D9D7F1;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1vw;
+    padding: 5px 17px;
+  }
+  .menu-item:hover{
+    color: #B8405E;
+  }
+  .menu {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  canvas{
     position: absolute;
+  }
+  .canvas{
+    position: relative;
+    display: flex;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+
+  .img-label{
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .upload-label{
+    box-shadow: 0px 0px 17px -1px #B8405E;
+    display: flex;
+    align-items: center;
+    background-color: #B8405E;
+    padding: 5px 17px;
+    color: whitesmoke;
+  }
+  .upload-label:hover{
+    color: #2EB086;
+  }
+
+  .model-load{
+    font-size: 1vw;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  
+  .selected{
+    background-color: #655D8A;
+    color: white;
+  }
+
+  .holder{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .user-video{
+    display: none;
+  }
+
+  .hidden{
+    display: none!important;
+    opacity: 0;
+  }
+
+  .disappear{
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .user-video{
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  p{
+    text-align: center;
+    padding: 0 15px;
+    font-size: 20px;
   }

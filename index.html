@@ -5,18 +5,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>zsh</title>
+  <link rel="icon" type="image/x-icon" href="titan.ico">
   <link rel="stylesheet" href="style.css">
+  <script defer src="face-api.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <button id="button">VERDICT</button>
+
+  <h1 style="text-align: center;">Face Detection</h1>
+  <div class="menu">
+    <a class="img menu-item selected" id="img">import image</a>
+    <a class="video menu-item" id="vid">webcam</a>
   </div>
 
-  <video id="video" width="720" height="560" autoplay muted></video>
-  <script defer src="face-api.min.js"></script>
-  <script defer src="script.js"></script>
+  <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+  <div class="user-image">
+    <div class="img-label">
+      <label class="upload-label disabled" id="upld" for="file" style="cursor: pointer;">
+        <i class="fas fa-file-image" style="margin-right: 5px"></i>
+        select image
+      </label>
+
+      <p class="model-load">
+        loading models
+      </p>
+    </div>
+    <div class="holder">
+      <div class="canvas">
+        <img id="output" height="400" />
+      </div>
+    </div>
+  </div>
+  <div class="user-video hidden">
+    <video id="video" width="514" height="400" autoplay muted></video>
+  </div>
+  <p>
+    Used <a href="https://github.com/justadudewhohacks/face-api.js" target="_blank"> justadudewhohack's face-api</a>
+  </p>
+
+  <script>
+    var currentID = "img";
+    document.querySelector('.menu').addEventListener('click', (e) => {
+      if (e.target != document.querySelector('.menu'))
+        if (document.querySelector('.selected') != e.target) {
+          currentID = e.target.id;
+          document.querySelector('.selected').classList.remove("selected")
+          e.target.classList.add('selected');
+        }
+    });
+    document.querySelector('.video').addEventListener('click', () => {
+      document.querySelector('.user-image').classList.add('hidden');
+      document.querySelector('.user-video').classList.remove('hidden');
+      if (currentID != 'vid')
+        startVideo();
+    })
+    document.querySelector('.img').addEventListener('click', () => {
+      document.querySelector('.user-image').classList.remove('hidden');
+      document.querySelector('.user-video').classList.add('hidden');
+      localStream.getTracks().forEach(function (track) {
+        track.stop();
+      });
+      vid
+      clearInterval(tempFeed);
+      tempCanvas.remove();
+      video.srcObject = null;
+    })
+  </script>
 </body>
 
 </html>

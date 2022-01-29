@@ -1,2 +1,2 @@
-used justadudewhohack's [face-api](https://github.com/justadudewhohacks/face-api.js)
- 
+# faceGenderAgeDetection
+Site live at - https://namandureja.github.io/faceGenderAgeDetection/

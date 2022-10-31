@@ -1,5 +1,9 @@
-used [justadudewhohack's face api](https://github.com/justadudewhohacks/face-api.js)
+# Face and emotions detection
 
-[this](https://www.youtube.com/watch?v=CVClHLwv-4I) yt video helped 
+### The purpose of this project is to learn and practice concepts related to:
+- HTML, CSS, JS
+- Basic of Facial Recognition
 
-doesn't work on phone (?)
+API used: [justadudewhohack's face api](https://github.com/justadudewhohacks/face-api.js). It has excellent documentation which was very easy to navigate.
+
+[This](https://www.youtube.com/watch?v=CVClHLwv-4I) youtube video was very helpful. 
